@@ -1,0 +1,8 @@
+*~
+txt/
+address.txt
+build/
+build.xml
+nbproject/
+test/
+manifest.mf
