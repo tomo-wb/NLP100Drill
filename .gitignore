@@ -6,3 +6,7 @@ build.xml
 nbproject/
 test/
 manifest.mf
+src/*.class
+src/*.sh
+src/*.jar
+src/*~
