@@ -2,6 +2,7 @@
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -38,6 +39,27 @@ public class FileIO {
         }catch(IOException e){
             System.out.println(e);
         }
+        return TextsArray;
+    }
+    
+    public ArrayList<String> FileReader(String fileName){
+        ArrayList<String> TextsArray = new ArrayList<>();    
+        File file = new File(fileName);
+        
+        try{
+            BufferedReader br = new BufferedReader(new FileReader(file));
+            String str = br.readLine();
+            while(str != null){
+                TextsArray.add(str);
+                str = br.readLine();
+            }
+            br.close();
+        }catch(FileNotFoundException e){
+            System.out.println(e);
+        }catch(IOException e){
+            System.out.println(e);
+        }
+        
         return TextsArray;
     }
     

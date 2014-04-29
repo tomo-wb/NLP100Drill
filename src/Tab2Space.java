@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class Tab2Space {
     private static final String SPACE = " ";
-    private static final String TAB = "\\t";
+    private static final String ITAB = "\\t";
     
     public static void main(String[] args){
         FileIO FIO = new FileIO();
@@ -18,7 +18,7 @@ public class Tab2Space {
         // change "Tab" to "Space"
         for(int i = 0; i < TextsArray.size(); i++){
             String text = TextsArray.get(i);
-            text = text.replaceAll(TAB, SPACE);
+            text = text.replaceAll(ITAB, SPACE);
             println(text);
         }
     }
