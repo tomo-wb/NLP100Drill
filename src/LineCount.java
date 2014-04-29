@@ -16,7 +16,6 @@ import java.util.ArrayList;
  */
 public class LineCount {
     public static void main(String[] args){
-        println(args[0]);
         ArrayList<String> TextsArray = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
             TextsArray = new ArrayList<>();
