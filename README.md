@@ -12,6 +12,8 @@
 5. PrintHeadSent.java 
 6. PrintTailSent.java
 7. UniqNum.java
+ - cut -f1 adrress.txt | sort | uniq | wc -l
 8. DicSort2Col.java 
 9. ReverseSort.java
 10. WordFrequency.java
+ - sort col2.txt | uniq -c | sort -r
