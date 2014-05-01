@@ -9,8 +9,7 @@ import java.util.Collections;
  */
 public class DicSort2Col {
     private static final String ITAB = "\\t";
-    private static final String OTAB = "\t";
-    
+    private static final String OTAB = "\t";    
     
     public static void main(String[] args){
         FileIO FIO = new FileIO();
