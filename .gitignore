@@ -10,3 +10,4 @@ src/*.class
 src/*.sh
 src/*.jar
 src/*~
+dist/
