@@ -8,8 +8,8 @@ import java.util.ArrayList;
 public class ExtractCol {
     private static final String ITAB = "\\t";
     private static final String NULL = "NULL";
-    private static final String COL1 = "./txt/col1.txt";
-    private static final String COL2 = "./txt/col2.txt";
+    private static final String COL1 = "../txt/col1.txt";
+    private static final String COL2 = "../txt/col2.txt";
     
     public static void main(String[] args){
         FileIO FIO = new FileIO();
