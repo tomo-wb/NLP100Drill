@@ -14,3 +14,4 @@
 7. UniqNum.java
 8. DicSort2Col.java 
 9. ReverseSort.java
+10. WordFrequency.java
