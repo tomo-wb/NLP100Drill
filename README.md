@@ -17,3 +17,5 @@
 9. ReverseSort.java
 10. WordFrequency.java
  - sort col2.txt | uniq -c | sort -r
+
+## 第2セット
