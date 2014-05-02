@@ -6,6 +6,7 @@
 ## 課題とプログラム名の対応
 ### 第1セット
 1. LineCount.java  
+ - wc -l adrress.txt 
 2. Tab2Space.java 
 3. ExtractCol.java
 4. PasteCols.java
@@ -19,4 +20,6 @@
  - sort col2.txt | uniq -c | sort -r
 
 ### 第2セット
+11. KakusanKibou.java
+ - grep "拡散希望" tweets.txt
 
