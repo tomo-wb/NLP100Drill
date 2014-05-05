@@ -1,5 +1,8 @@
 
-import java.util.ArrayList;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -8,58 +11,51 @@ import java.util.regex.Pattern;
  * @author TomoyaMizumoto
  */
 public class ExtractRT {
-    private static String RT = "RT";
     public static void main(String[] args){
-        /*
-        FileIO FIO = new FileIO();
-        ArrayList<String> TextsArray = new ArrayList<>();  // stored texts
-        TextsArray = FIO.FileSTDIN();
-        
-        for(int i = 0; i < TextsArray.size(); i++){
-            Pattern p = Pattern.compile("(.*) "+RT+" .*");
-            Matcher m = p.matcher(TextsArray.get(i));
-            if(m.find()){
-                String RTreply = m.group(1);
-                println("O "+TextsArray.get(i));
-                println("E "+ RTreply);
+        try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
+            String str = br.readLine();
+            while(str != null){
+                int num = 0;
+                recursion(str,num);
+                str = br.readLine();
             }
-        }*/
-        String text = "RT @??: すうのよ RT @???: つい RT @???: なのだ";
-        recursion(text);
+        }catch(FileNotFoundException e){
+            System.out.println(e);
+        }catch(IOException e){
+            System.out.println(e);
+        }       
     }
     
-    private static void recursion(String text){
-        Pattern p = Pattern.compile("(.*) "+RT+" @.*: (.*)");
+    private static int recursion(String text, int num){
+        Pattern p = Pattern.compile("(.+)"+"(RT|QT)"+" @.*: (.*)");
         Matcher m = p.matcher(text);
         if(m.find()){
+            if(num > 0){
+                String RTreply2 = m.group(3);
+                printlnRT(RTreply2);
+            }
             String RTreply = m.group(1);
-            m = p.matcher(RTreply);
-            if(m.find()){
-                String RTreply2 = m.group(2);
-                println(RTreply2);
-                recursion(RTreply);
-            }
-            else{
-                Pattern p2 = Pattern.compile(RT+" @.*: (.*)");
-                println(RTreply);
-                Matcher m2 = p2.matcher(RTreply);
-                if(m2.find()){
-                    String RTreply2 = m2.group(1);
-                    println(RTreply2);
-                }
-                else{
-                
-                }
-                //Matcher m2 = p2.matcher(RTreply);
-                //String RTreply2 = m2.group(1);
-                //println(RTreply2);
-            }
+            num += 1;
+            num = recursion(RTreply,num);
         }
         else{
-            println(text);
+            Pattern p2 = Pattern.compile("(RT|QT)"+" @.*: (.*)");
+            Matcher m2 = p2.matcher(text);
+            if(m2.find()&& num > 0){
+                String RTreply2 = m2.group(2);
+                printlnRT(RTreply2);
+            }
+            else if(num > 0){
+                printlnRT(text);
+            }
         }
-        //return text;
+        return num;
     }
     
     private static void println(Object obj) { System.out.println(obj); }
+    
+    private static void printlnRT(String str) { 
+        if(!str.equals(""))
+            System.out.println(str); 
+    }
 }
