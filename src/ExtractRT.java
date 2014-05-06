@@ -1,5 +1,4 @@
 
-import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -12,18 +11,18 @@ import java.util.regex.Pattern;
  */
 public class ExtractRT {
     public static void main(String[] args){
-        try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
-            String str = br.readLine();
-            while(str != null){
+        try (ExtensionBufferedReader ebr = new ExtensionBufferedReader(new InputStreamReader(System.in))){
+            String tweet = ebr.readLine();
+            while (tweet != null){
                 int num = 0;
-                recursion(str,num);
-                str = br.readLine();
+                recursion(tweet,num);
+                tweet = ebr.readLine();
             }
         }catch(FileNotFoundException e){
             System.out.println(e);
         }catch(IOException e){
             System.out.println(e);
-        }       
+        }
     }
     
     private static int recursion(String text, int num){

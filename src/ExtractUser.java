@@ -1,5 +1,4 @@
 
-import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -19,19 +18,19 @@ import java.util.regex.Pattern;
  */
 public class ExtractUser {
     private static HashMap<String, Integer> User = new HashMap<>();
+    
     public static void main(String[] args){
-        try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
-            String str = br.readLine();
-            while(str != null){
-                int num = 0;
-                ExtractUser(str);
-                str = br.readLine();
+        try (ExtensionBufferedReader ebr = new ExtensionBufferedReader(new InputStreamReader(System.in))){
+            String tweet = ebr.readLine();
+            while (tweet != null){
+                ExtractUser(tweet);
+                tweet = ebr.readLine();
             }
         }catch(FileNotFoundException e){
             System.out.println(e);
         }catch(IOException e){
             System.out.println(e);
-        }       
+        }
     }
     
     private static void ExtractUser(String str){
@@ -45,5 +44,6 @@ public class ExtractUser {
             } 
         }
     }
+    
     private static void println(Object obj) { System.out.println(obj); }
 }

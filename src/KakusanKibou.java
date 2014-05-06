@@ -1,5 +1,8 @@
 
-import java.util.ArrayList;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 
 /**
@@ -7,18 +10,27 @@ import java.util.ArrayList;
  * @author TomoyaMizumoto
  */
 public class KakusanKibou {
-    private static String KakusanKibou = "拡散希望";
-     
+    private static final String KakusanKibou = "拡散希望";
+    
     public static void main(String[] args){
-        FileIO FIO = new FileIO();
-        ArrayList<String> TextsArray = new ArrayList<>();  // stored texts
-        TextsArray = FIO.FileSTDIN();
-        
-        for(int i = 0; i < TextsArray.size(); i++){
-            if(TextsArray.get(i).contains(KakusanKibou)){
-                println(TextsArray.get(i));
+        try (ExtensionBufferedReader ebr = new ExtensionBufferedReader(new InputStreamReader(System.in))){
+            String tweet = ebr.readLine();
+            while (tweet != null){
+                PrintKakusanKibou(tweet);
+                tweet = ebr.readLine();
             }
+        }catch(FileNotFoundException e){
+            System.out.println(e);
+        }catch(IOException e){
+            System.out.println(e);
         }
     }
+    
+    private static void PrintKakusanKibou(String tweet){
+        if(tweet.contains(KakusanKibou)){
+            println(tweet);
+        }
+    }
+
     private static void println(Object obj) { System.out.println(obj); }
 }
