@@ -21,7 +21,7 @@
 
 ### 第2セット
 00. ExtensionBufferedReader.java 
- - http://takaharukobayashi.blogspot.jp/2013/06/javabufferedbreaderreadline.htmlを元に\nで一行読み込むようにする
+ - http://takaharukobayashi.blogspot.jp/2013/06/javabufferedbreaderreadline.html を元に\nで一行読み込むようにする
  - \rでは改行しない 
 11. KakusanKibou.java
  - grep "拡散希望" tweets.txt
