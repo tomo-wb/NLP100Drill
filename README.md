@@ -20,8 +20,12 @@
  - sort col2.txt | uniq -c | sort -r
 
 ### 第2セット
+00. ExtensionBufferedReader.java 
+ - http://takaharukobayashi.blogspot.jp/2013/06/javabufferedbreaderreadline.htmlを元に\nで一行読み込むようにする
+ - \rでは改行しない 
 11. KakusanKibou.java
  - grep "拡散希望" tweets.txt
 12. EOSNow.java
  - grep "なう$" tweets.txt
 13. ExtractRT.java
+14. ExtractUser.java
