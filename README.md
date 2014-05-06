@@ -20,7 +20,7 @@
  - sort col2.txt | uniq -c | sort -r
 
 ### 第2セット
-- ExtensionBufferedReader.java 
+ExtensionBufferedReader.java 
  - http://takaharukobayashi.blogspot.jp/2013/06/javabufferedbreaderreadline.html を元に\nで一行読み込むようにする
  - \rでは改行しない 
 11. KakusanKibou.java
