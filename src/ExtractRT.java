@@ -19,6 +19,7 @@ public class ExtractRT {
                 extractRTreply(tweet);
                 tweet = ebr.readLine();
             }
+            ebr.close();
         }catch(FileNotFoundException e){
             System.out.println(e);
         }catch(IOException e){

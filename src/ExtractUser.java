@@ -26,6 +26,7 @@ public class ExtractUser {
                 ExtractUser(tweet);
                 tweet = ebr.readLine();
             }
+            ebr.close();
         }catch(FileNotFoundException e){
             System.out.println(e);
         }catch(IOException e){

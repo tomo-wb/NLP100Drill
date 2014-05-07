@@ -34,6 +34,7 @@ public class FileIO {
                 TextsArray.add(str);
                 str = br.readLine();
             }
+            br.close();
         }catch(FileNotFoundException e){
             System.out.println(e);
         }catch(IOException e){

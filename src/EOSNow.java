@@ -25,6 +25,7 @@ public class EOSNow {
                 PrintEOSNow(tweet);
                 tweet = ebr.readLine();
             }
+            ebr.close();
         }catch(FileNotFoundException e){
             System.out.println(e);
         }catch(IOException e){
