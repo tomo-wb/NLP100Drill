@@ -15,13 +15,23 @@ public class ExtractRT {
             String tweet = ebr.readLine();
             while (tweet != null){
                 int num = 0;
-                recursion(tweet,num);
+                //recursion(tweet,num);
+                extractRTreply(tweet);
                 tweet = ebr.readLine();
             }
         }catch(FileNotFoundException e){
             System.out.println(e);
         }catch(IOException e){
             System.out.println(e);
+        }
+    }
+    
+    private static void extractRTreply(String tweet){
+        Pattern p = Pattern.compile("(.+?)"+"(RT|QT)"+" @.*: (.*)");
+        Matcher m = p.matcher(tweet);
+        if(m.find()){
+            String RTreply = m.group(1);
+            printlnRT(RTreply);
         }
     }
     
@@ -54,7 +64,10 @@ public class ExtractRT {
     private static void println(Object obj) { System.out.println(obj); }
     
     private static void printlnRT(String str) { 
-        if(!str.equals(""))
+        Pattern p = Pattern.compile("(RT|QT)"+" @.*: (.*)");
+        Matcher m = p.matcher(str);
+        
+        if(!str.equals("")&& !m.find())
             System.out.println(str); 
     }
 }
