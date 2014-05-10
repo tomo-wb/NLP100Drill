@@ -28,6 +28,7 @@
 14. ExtractUser.java
 15. User2HTMLURL.java
 16. ExtractBracketKanji.java
+17. ExtractPersonalName.java
 
 ### その他
 1. FileIO.java
