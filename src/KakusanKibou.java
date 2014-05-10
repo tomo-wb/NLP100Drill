@@ -16,6 +16,7 @@ public class KakusanKibou {
         try (ExtensionBufferedReader ebr = new ExtensionBufferedReader(new InputStreamReader(System.in))){
             String tweet = ebr.readLine();
             while (tweet != null){
+                tweet = tweet.replaceAll("\\\\n", " ");
                 PrintKakusanKibou(tweet);
                 tweet = ebr.readLine();
             }

@@ -15,6 +15,7 @@ public class ExtractRT {
             String tweet = ebr.readLine();
             while (tweet != null){
                 int num = 0;
+                tweet = tweet.replaceAll("\\\\n", " ");
                 //recursion(tweet,num);
                 extractRTreply(tweet);
                 tweet = ebr.readLine();

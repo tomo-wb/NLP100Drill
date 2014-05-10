@@ -23,6 +23,7 @@ public class ExtractUser {
         try (ExtensionBufferedReader ebr = new ExtensionBufferedReader(new InputStreamReader(System.in))){
             String tweet = ebr.readLine();
             while (tweet != null){
+                tweet = tweet.replaceAll("\\\\n", " ");
                 ExtractUser(tweet);
                 tweet = ebr.readLine();
             }
